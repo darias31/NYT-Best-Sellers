@@ -180,8 +180,11 @@ public class BestSellers {
         HashMap<String, Integer> authorNames = new HashMap<String, Integer>();
 
         for (int i = 0; i < Author.length; i++) {
-            authorNames.putIfAbsent(Author[i], 1);
-            if (authorNames.containsKey(Author[i])) {
+            if (!(authorNames.containsKey(Author[i]))) {
+                authorNames.put(Author[i], 1);
+            
+            
+            } else if (authorNames.containsKey(Author[i])) {
                 authorNames.put(Author[i], authorNames.get(Author[i]) + 1);
             }
         }
@@ -208,8 +211,9 @@ public class BestSellers {
         HashMap<String, Integer> authorNames = new HashMap<String, Integer>();
 
         for (int i = 0; i < Author.length; i++) {
-            authorNames.putIfAbsent(Author[i], 1);
-            if (authorNames.containsKey(Author[i])) {
+            if (!(authorNames.containsKey(Author[i]))) {
+                authorNames.put(Author[i], 1);
+            } else if (authorNames.containsKey(Author[i])) {
                 authorNames.put(Author[i], authorNames.get(Author[i]) + 1);
             }
         }
@@ -241,8 +245,9 @@ public class BestSellers {
 
         // create authorNames hash map
         for (int i = 0; i < Author.length; i++) {
-            authorNames.putIfAbsent(Author[i], 1);
-            if (authorNames.containsKey(Author[i])) {
+            if (!(authorNames.containsKey(Author[i]))) {
+                authorNames.put(Author[i], 1);
+            } else if (authorNames.containsKey(Author[i])) {
                 authorNames.put(Author[i], authorNames.get(Author[i]) + 1);
             }
         }
@@ -321,9 +326,6 @@ public class BestSellers {
         System.out.print("\n\nThe most enduring author is " + mostEnduringAuthor + ". ");
         System.out.print(
                 "The author's first appearance is on " + week1 + " and the last appeareance is on " + week2 + ".");
-
-        // somewhere in the code the most enduring author is getting removed from the
-        // Author array
 
     }
 }
